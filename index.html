@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YAGBE – Yet Another Game-Boy Emulator</title>
+  <meta name="description" content="YAGBE ist ein kostenloser Game-Boy-Emulator für Windows, Linux und macOS. Herunterladen, entpacken, spielen.">
+  <meta property="og:title" content="YAGBE – Yet Another Game-Boy Emulator">
+  <meta property="og:description" content="Kostenloser Game-Boy-Emulator für Windows, Linux und macOS.">
+  <meta property="og:image" content="assets/img/yagbe.png">
+  <link rel="icon" href="assets/img/yagbe.png" type="image/png">
+  <link rel="preload" href="assets/fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- Kopfzeile -->
+<header class="top">
+  <a class="brand" href="#">
+    <img src="assets/img/yagbe.png" alt="" width="36" height="36">
+    <span>YAGBE</span>
+  </a>
+  <nav>
+    <a href="#funktionen">Funktionen</a>
+    <a href="#bilder">Bilder</a>
+    <a href="#download">Download</a>
+    <a href="#hilfe">Erster Start</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Startbereich: Text links, spielbarer Game Boy rechts -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="kicker">Yet Another Game-Boy Emulator</p>
+      <h1>Dein Game Boy.<br>Auf jedem Rechner.</h1>
+      <p class="lead">YAGBE spielt klassische Game-Boy-Spiele unter Windows, Linux und macOS. Kostenlos, ohne Installation: herunterladen, entpacken, loslegen.</p>
+
+      <div class="cta">
+        <a id="main-download" class="btn btn-primary" href="https://github.com/Malte007/YAGBE/releases/latest">
+          <span class="btn-label">Herunterladen</span>
+          <span class="btn-sub" id="main-download-sub">alle Systeme</span>
+        </a>
+        <a class="btn btn-ghost" href="#download">Andere Systeme</a>
+      </div>
+      <p class="version" id="version">Neueste Version wird geladen …</p>
+    </div>
+
+    <!-- Game Boy: Bildschirm ist ein 160x144-Canvas wie beim Original -->
+    <div class="gameboy" id="gameboy" aria-label="Game Boy mit Download-Menü. Steuerung mit Pfeiltasten, Enter und Leertaste.">
+      <div class="gb-bezel">
+        <div class="gb-bezel-title"><span>DOT MATRIX WITH STEREO SOUND</span></div>
+        <div class="gb-power" id="gb-power"><i></i>POWER</div>
+        <canvas id="lcd" width="160" height="144"></canvas>
+      </div>
+      <div class="gb-logo">YAGBE <small>Yet Another Game-Boy Emulator</small></div>
+
+      <div class="gb-controls">
+        <div class="dpad">
+          <button data-key="up"    class="d-up"    aria-label="Hoch"></button>
+          <button data-key="left"  class="d-left"  aria-label="Links"></button>
+          <span class="d-mid"></span>
+          <button data-key="right" class="d-right" aria-label="Rechts"></button>
+          <button data-key="down"  class="d-down"  aria-label="Runter"></button>
+        </div>
+        <div class="ab">
+          <button data-key="b" class="btn-b" aria-label="B"></button>
+          <button data-key="a" class="btn-a" aria-label="A"></button>
+          <span class="lbl-b">B</span><span class="lbl-a">A</span>
+        </div>
+      </div>
+      <div class="gb-start">
+        <div><button data-key="select" aria-label="Select"></button><span>SELECT</span></div>
+        <div><button data-key="start" aria-label="Start"></button><span>START</span></div>
+      </div>
+      <div class="gb-speaker"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <p class="gb-hint">Probier ihn aus: Klick auf die Tasten oder nutze <kbd>↑</kbd><kbd>↓</kbd> und <kbd>Enter</kbd>. <b>A</b> lädt herunter, <b>SELECT</b> wechselt die Farben.</p>
+  </section>
+
+  <!-- Funktionen -->
+  <section id="funktionen" class="section">
+    <h2><span class="px">01</span> Was YAGBE kann</h2>
+    <div class="features">
+      <article><div class="ico">♪</div><h3>Originalgetreuer Ton</h3><p>Alle vier Soundkanäle des Game Boy, ausgegeben über OpenAL.</p></article>
+      <article><div class="ico">✚</div><h3>Controller</h3><p>Xbox-, PlayStation- und andere Gamepads werden erkannt. Tasten frei belegbar.</p></article>
+      <article><div class="ico">▦</div><h3>Farbthemen</h3><p>Vom klassischen DMG-Grün bis Kirokaze oder Ice Cream, eigene Paletten inklusive.</p></article>
+      <article><div class="ico">◆</div><h3>Spielstände</h3><p>Batterie-Speicher (MBC1, MBC3 mit Uhr, MBC5) wird automatisch als .sav gesichert.</p></article>
+      <article><div class="ico">▣</div><h3>Vollbild</h3><p>Mit F11 ins Vollbild, scharfe Pixel ohne Weichzeichner.</p></article>
+      <article><div class="ico">◎</div><h3>Überall</h3><p>Windows, Linux und macOS (Intel und Apple-Chip). Nichts zu installieren.</p></article>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section id="bilder" class="section">
+    <h2><span class="px">02</span> So sieht es aus</h2>
+    <div class="gallery">
+      <figure><img src="assets/img/about.png" alt="Über-YAGBE-Fenster im Game-Boy-Design" loading="lazy"><figcaption>Über YAGBE</figcaption></figure>
+      <figure><img src="assets/img/tastenbelegung-controller.png" alt="Tastenbelegung für den Controller" loading="lazy"><figcaption>Controller belegen</figcaption></figure>
+      <figure><img src="assets/img/farbthema-menue.png" alt="Menü mit Farbthemen" loading="lazy"><figcaption>Farbthemen</figcaption></figure>
+      <figure><img src="assets/img/tastenbelegung.png" alt="Tastenbelegung für die Tastatur" loading="lazy"><figcaption>Tastatur belegen</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Downloads -->
+  <section id="download" class="section">
+    <h2><span class="px">03</span> Download</h2>
+    <p class="muted" id="dl-meta">Immer die neueste Version. Ältere findest du unter <a href="https://github.com/Malte007/YAGBE/releases">allen Versionen</a>.</p>
+    <div class="downloads">
+      <a class="dl" data-os="win" href="https://github.com/Malte007/YAGBE/releases/latest/download/YAGBE-win-x64.zip">
+        <span class="dl-os">Windows</span><span class="dl-detail">10 und 11, 64 Bit</span><span class="dl-size" data-file="YAGBE-win-x64.zip">ZIP</span>
+      </a>
+      <a class="dl" data-os="linux" href="https://github.com/Malte007/YAGBE/releases/latest/download/YAGBE-linux-x64.zip">
+        <span class="dl-os">Linux</span><span class="dl-detail">64 Bit, z. B. Ubuntu</span><span class="dl-size" data-file="YAGBE-linux-x64.zip">ZIP</span>
+      </a>
+      <a class="dl" data-os="mac-arm" href="https://github.com/Malte007/YAGBE/releases/latest/download/YAGBE-osx-arm64.zip">
+        <span class="dl-os">macOS Apple-Chip</span><span class="dl-detail">M1, M2, M3 …</span><span class="dl-size" data-file="YAGBE-osx-arm64.zip">ZIP</span>
+      </a>
+      <a class="dl" data-os="mac-intel" href="https://github.com/Malte007/YAGBE/releases/latest/download/YAGBE-osx-x64.zip">
+        <span class="dl-os">macOS Intel</span><span class="dl-detail">Macs bis 2020</span><span class="dl-size" data-file="YAGBE-osx-x64.zip">ZIP</span>
+      </a>
+    </div>
+    <p class="muted small">Spiele (ROMs) sind nicht enthalten. Nutze nur Spiele, die du selbst besitzt.</p>
+  </section>
+
+  <!-- Hilfe zum ersten Start -->
+  <section id="hilfe" class="section">
+    <h2><span class="px">04</span> Erster Start</h2>
+    <p class="muted">YAGBE ist (noch) nicht bei Microsoft oder Apple registriert. Deshalb fragt dein System beim ersten Start einmal nach.</p>
+    <div class="howto">
+      <details data-os="win" open>
+        <summary>Windows</summary>
+        <ol>
+          <li>ZIP mit Rechtsklick → <b>Alle extrahieren</b> entpacken.</li>
+          <li>Im Ordner <code>YAGBE</code> die Datei <code>YAGBE.exe</code> starten.</li>
+          <li>Erscheint „Der Computer wurde durch Windows geschützt“: <b>Weitere Informationen</b> → <b>Trotzdem ausführen</b>.</li>
+        </ol>
+      </details>
+      <details data-os="linux">
+        <summary>Linux</summary>
+        <ol>
+          <li>ZIP entpacken, z. B. per Rechtsklick → <b>Hier entpacken</b>.</li>
+          <li>Im Ordner <code>YAGBE</code> die Datei <code>YAGBE</code> starten (Doppelklick oder im Terminal <code>./YAGBE</code>).</li>
+          <li>Startet nichts: Rechtsklick → Eigenschaften → <b>Als Programm ausführen</b> erlauben.</li>
+        </ol>
+      </details>
+      <details data-os="mac">
+        <summary>macOS</summary>
+        <ol>
+          <li>ZIP doppelklicken, <code>YAGBE.app</code> in den Ordner <b>Programme</b> ziehen.</li>
+          <li>Beim ersten Mal: <b>Rechtsklick</b> auf die App → <b>Öffnen</b> → nochmal <b>Öffnen</b>.</li>
+          <li>Ab macOS 15: Systemeinstellungen → Datenschutz &amp; Sicherheit → unten <b>Dennoch öffnen</b>.</li>
+          <li>Hilft beides nicht: im Terminal <code>xattr -cr /Applications/YAGBE.app</code> eingeben, danach startet die App normal.</li>
+        </ol>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>© 2026 Malte &amp; Claude · <a href="https://github.com/Malte007/YAGBE">GitHub</a> · Lizenzhinweise der verwendeten Bibliotheken liegen jedem Download als <code>THIRD-PARTY-NOTICES.txt</code> bei. Schrift: Press Start 2P (<a href="assets/fonts/OFL.txt">OFL-1.1</a>).</p>
+  <p class="small">YAGBE ist ein privates Hobbyprojekt ohne Verbindung zu Nintendo. „Game Boy“ ist eine Marke von Nintendo.</p>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
