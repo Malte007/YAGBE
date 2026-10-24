@@ -15,7 +15,7 @@
 | macOS mit Intel-Prozessor | [YAGBE-osx-x64.zip](https://github.com/Malte007/YAGBE/releases/latest/download/YAGBE-osx-x64.zip) |
 
 ZIP entpacken und `YAGBE` starten, installiert werden muss nichts. Hilfe zum ersten Start
-(Windows SmartScreen, macOS Gatekeeper) steht auf der [Webseite](https://malte007.github.io/YAGBE/#hilfe).
+(Windows SmartScreen) steht auf der [Webseite](https://malte007.github.io/YAGBE/#hilfe).
 
 Spiele (ROMs) sind nicht enthalten.
 
